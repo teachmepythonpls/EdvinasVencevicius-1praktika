@@ -2,6 +2,7 @@ package com.example.edvinasvencevicius_1praktika;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -13,6 +14,8 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
 
     private TextView tv;
+    private Button button;
+    private Button changeColorButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +28,17 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        this.tv = findViewById(R.id.textView);
+        tv = findViewById(R.id.textView);
+        button = findViewById(R.id.button);
+        changeColorButton = findViewById(R.id.changeColorButton);
     }
 
     public void buttonClick(View view) {
         tv.setText("Hello");
+    }
+
+    public void changeColorButtonClick(View view) {
+        // Change text color to red
+        tv.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
     }
 }
